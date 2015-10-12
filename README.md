@@ -26,6 +26,7 @@ Once you have installed npm, you can get hold of http-server by typing:
 
 To run the application:
 
+- open the *application* folder in VSCode
 - right click on *index.html*
 - select *Open in Command Prompt*
 - once the command prompt has opened type *http-server*
