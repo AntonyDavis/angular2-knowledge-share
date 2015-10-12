@@ -27,10 +27,10 @@ Once you have installed npm, you can get hold of http-server by typing:
 To run the application:
 
 - open *\angular2-knowledge-share\typescript-angular2* folder in *VSCode*
-- right-click on *index.html*
+- right click on *index.html*
 - select *Open in Command Prompt*
-- once the command prompt has opened, type http-server
+- once the command prompt has opened type *http-server*
 
-- **NOTE**: it is very important the http-server is run in the same directory as *index.html* otherwise it will not work
+**NOTE**: it is very important the http-server is run in the same directory as *index.html* otherwise it will not work
 
    
