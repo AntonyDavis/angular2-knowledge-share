@@ -1,0 +1,3 @@
+<div *ng-for="#card of cards">
+    <div (click)="flipCard(card.name)">{{card.name}} has been flipped {{ card.flipped }}</div>
+</div>

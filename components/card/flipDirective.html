@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html ng-app="test">
+<head lang="en">
+    <meta charset="UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+<body>
+    <section ng-controller="TestCtrl">
+        <card ng-repeat="card in cards" card="card" ng-click="flipCard()"></card>
+    </section>
+
+    <script>
+        var app = angular.module('test', []);
+
+        app.controller('TestCtrl', ['$scope', function ($scope) {
+            $scope.cards = [
+                {name: 'Queen of Hearts', flipped: false},
+                {name: 'Jack of Spades', flipped: false},
+                {name: 'Ace of Clubs', flipped: false}
+            ];
+        }]);
+
+        app.directive('card', [function() {
+            return {
+                template: 'card.html',
+                restrict: 'E',
+                scope: {
+                    card: "="
+                },
+                link: function(scope, elem, attrs) {
+                    // Create a function that will be called on click via ng-click.
+                    scope.flipCard = function () {
+                        scope.card.flipped = !scope.card.flipped;
+                    }
+                },
+                replace: true,
+                template: '<div ng-click="flipCard()">My card. Flipped: {{ card.flipped }}</div>'
+            }
+        }]);
+    </script>
+</body>
+</html>
+
+/* 1. first thing we can do is remove scope, the binding type and the link function
+
+    We don’t need to know about isolated and binding types anymore
+    Web components have a completely isolated context by default
+    That leaves us with the directive’s name, its template and the link function.
+    
+    directive("card", function() {
+        return {    			  			
+   		   template: ‘card.html’			
+        }
+    });
+    
+    2. This can be easily e-written in ES5 as a simple constructor function:
+    
+    Function Card() {}
+
+    We can then add the flipCard function using the prototype property:
+    
+    Card.prototype.flipCard = function() {…}
+
+    3. We can then re-write this using ES6 or TypeScript:
+
+    class Card() {
+        constructor() {
+        }
+    }
+    
+    4. Finally, we need to add the name and the template:
+    
+    Card.annotations = [
+        new Component({
+            selector: "card"
+        }),
+        new View({
+            templateUrl: "card.html"
+        })
+    ];
+    
+    5. But it's even easier using Annotations:   
+
+    @Component({
+	   selector: “card”
+    })
+    @View({
+	   templateUrl: “card.html”
+    })
+*/

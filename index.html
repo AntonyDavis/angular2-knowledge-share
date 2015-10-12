@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title>Angular 2 Demos</title>
+    <link rel="stylesheet" href="//cdn.kendostatic.com/2014.2.716/styles/kendo.common.min.css">
+    <link rel="stylesheet" href="//cdn.kendostatic.com/2014.2.716/styles/kendo.default.min.css">
+    <link href="styles/bootstrap.css" rel="stylesheet" />
+    <link href="site.css" rel="stylesheet">
+    
+    <!-- traceur is a run-time transpiler that allows you to use upcoming features of es6 
+    and compile them back into a version supported by today's browsers.
+    
+    This is useful because Angular 2 is based on ES6
+    
+    It also provides source maps for debugging.
+    -->
+    <script src="https://github.jspm.io/jmcriffey/bower-traceur-runtime@0.0.91/traceur-runtime.js"></script>
+    
+    <!-- Universal dynamic module loader - loads ES6 modules -->    
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/systemjs/0.18.4/system.src.js"></script>
+    <script>
+        System.config({
+            defaultJSExtensions: true
+        });
+    </script>
+    <script src="https://code.angularjs.org/2.0.0-alpha.36/angular2.js"></script>    
+    <script src="https://code.angularjs.org/2.0.0-alpha.36/http.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-alpha.36/router.dev.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script src="//cdn.kendostatic.com/2014.2.716/js/kendo.all.min.js"></script>    
+</head>
+<body>
+
+<!--
+    No longer any concept of an angular app, e.g. ng-app.
+    
+    Instead you have a top-level component, from which child components lead off.
+    
+    This fits in with the shadow DOM idea of fucntional, interacting DOM trees.
+-->
+<demo-app></demo-app>
+
+<!-- tells system.js module loader to load components/app file and run it. 
+     Allows you to load only what your app needs.
+-->
+<script>System.import('app');</script> 
+
+
+</body>
+
+
+
+</html>
