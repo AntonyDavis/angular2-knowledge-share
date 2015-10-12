@@ -26,10 +26,10 @@ To setup the application, you will need:
 
 
 To run the application:
-- 1. open \angular2-knowledge-share\typescript-angular2 in VSCode 
-- 2. right-click on index.html
-- 3. select Open in Command Prompt
-- 4. once the command prompt has opened, type http-server.
-- 5. NOTE: it is very important the http-server is run in the same directory as index.html otherwise it will not work
+- open \angular2-knowledge-share\typescript-angular2 in VSCode 
+- right-click on index.html
+- select Open in Command Prompt
+- once the command prompt has opened, type http-server.
+- NOTE: it is very important the http-server is run in the same directory as index.html otherwise it will not work
 
    
